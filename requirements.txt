@@ -1,0 +1,4 @@
+requests
+python-telegram-bot==22.7
+aiohttp
+nest_asyncio
