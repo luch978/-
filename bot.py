@@ -3,8 +3,8 @@ import asyncio
 import time
 
 proxies = {
-    "http": "http://z8Nfpp:(gfhjkm)87j2oy@185.240.94.115:8000",
-    "https": "http://z8Nfpp:(gfhjkm)87j2oy@185.240.94.115:8000"
+    "http": "http://z8Nfpp:87j2oy@185.240.94.115:8000",
+    "https": "http://z8Nfpp:87j2oy@185.240.94.115:8000""
 }
 
 session = requests.Session()
