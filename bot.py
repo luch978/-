@@ -42,7 +42,6 @@ settings = {
         "active": False
     }
 }
-}
 
 waiting_for = {}
 last_signal = {}
@@ -56,16 +55,8 @@ def main_menu():
         [InlineKeyboardButton("STATUS", callback_data="status")]
     ])
 
-def vol_menu():
-    return InlineKeyboardMarkup([
-        [InlineKeyboardButton("TIMEFRAME", callback_data="vol_tf")],
-        [InlineKeyboardButton("CANDLES", callback_data="vol_candles")],
-        [InlineKeyboardButton("MAX OLD VOL", callback_data="vol_max_old_volume")],
-        [InlineKeyboardButton("MIN NEW VOL", callback_data="vol_min_new_volume")],
-        [InlineKeyboardButton("START", callback_data="vol_start")],
-        [InlineKeyboardButton("STOP", callback_data="vol_stop")],
-        [InlineKeyboardButton("BACK", callback_data="main")]
-    ])
+
+def pump_menu():
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("PRICE %", callback_data="pump_price")],
         [InlineKeyboardButton("TIME MIN", callback_data="pump_time")],
@@ -75,6 +66,7 @@ def vol_menu():
         [InlineKeyboardButton("STOP", callback_data="pump_stop")],
         [InlineKeyboardButton("BACK", callback_data="main")]
     ])
+
 
 def dump_menu():
     return InlineKeyboardMarkup([
@@ -86,6 +78,17 @@ def dump_menu():
         [InlineKeyboardButton("BACK", callback_data="main")]
     ])
 
+
+def vol_menu():
+    return InlineKeyboardMarkup([
+        [InlineKeyboardButton("TIMEFRAME", callback_data="vol_tf")],
+        [InlineKeyboardButton("CANDLES", callback_data="vol_candles")],
+        [InlineKeyboardButton("MAX OLD VOL", callback_data="vol_max_old_volume")],
+        [InlineKeyboardButton("MIN NEW VOL", callback_data="vol_min_new_volume")],
+        [InlineKeyboardButton("START", callback_data="vol_start")],
+        [InlineKeyboardButton("STOP", callback_data="vol_stop")],
+        [InlineKeyboardButton("BACK", callback_data="main")]
+    ])
 def status_text():
     return f"""
 PUMP EARLY
