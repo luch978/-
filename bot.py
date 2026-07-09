@@ -19,8 +19,29 @@ CHAT_ID = 52119049
 BASE = "https://fapi.binance.com"
 
 settings = {
-    "pump": {"price": 1.0, "time": 5, "volume": 3.0, "oi": 0.5, "active": False},
-    "dump": {"pump_before": 10.0, "time": 20, "rsi": 80.0, "active": False}
+    "pump": {
+        "price": 1.0,
+        "time": 5,
+        "volume": 3.0,
+        "oi": 0.5,
+        "active": False
+    },
+
+    "dump": {
+        "pump_before": 10.0,
+        "time": 20,
+        "rsi": 80.0,
+        "active": False
+    },
+
+    "vol": {
+        "tf": "3m",
+        "candles": 5,
+        "max_old_volume": 700000,
+        "min_new_volume": 2000000,
+        "active": False
+    }
+}
 }
 
 waiting_for = {}
@@ -31,10 +52,20 @@ def main_menu():
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("PUMP SETTINGS", callback_data="pump_menu")],
         [InlineKeyboardButton("DUMP SETTINGS", callback_data="dump_menu")],
+        [InlineKeyboardButton("VOL SETTINGS", callback_data="vol_menu")],
         [InlineKeyboardButton("STATUS", callback_data="status")]
     ])
 
-def pump_menu():
+def vol_menu():
+    return InlineKeyboardMarkup([
+        [InlineKeyboardButton("TIMEFRAME", callback_data="vol_tf")],
+        [InlineKeyboardButton("CANDLES", callback_data="vol_candles")],
+        [InlineKeyboardButton("MAX OLD VOL", callback_data="vol_max_old_volume")],
+        [InlineKeyboardButton("MIN NEW VOL", callback_data="vol_min_new_volume")],
+        [InlineKeyboardButton("START", callback_data="vol_start")],
+        [InlineKeyboardButton("STOP", callback_data="vol_stop")],
+        [InlineKeyboardButton("BACK", callback_data="main")]
+    ])
     return InlineKeyboardMarkup([
         [InlineKeyboardButton("PRICE %", callback_data="pump_price")],
         [InlineKeyboardButton("TIME MIN", callback_data="pump_time")],
